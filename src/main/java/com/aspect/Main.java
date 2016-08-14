@@ -24,6 +24,7 @@ public class Main {
     return new TimerAspect();
   }
   
+  @SuppressWarnings("resource")
   public static void main(String[] args) {
     AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
     ctx.scan("com.aspect");
