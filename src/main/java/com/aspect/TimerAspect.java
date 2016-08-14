@@ -8,13 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Aspect
-@Component
 public class TimerAspect {
   @Pointcut("@annotation(com.aspect.Timer)")
   public void timerPointcut() {}
   
   @Autowired
-  public PojoForInject pojo;
+  public PojoForAspectInject pojo;
 
   @Around("timerPointcut() ")
   public Object measure(ProceedingJoinPoint joinPoint) throws Throwable {
